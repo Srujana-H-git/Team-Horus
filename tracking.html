@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Horus — Live Tracking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Team Horus — Live vehicle tracking and telemetry." />
+</head>
+
+<body>
+
+  <header class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Team Horus</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="team.html" class="nav-link">Meet Our Team</a>
+        <a href="achievements.html" class="nav-link">Our Achievements</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="tracking" style="padding:36px 0">
+      <div style="text-align:center;margin-bottom:28px">
+        <h1 style="font-size:2.2rem;margin:0 0 8px">📍 Live Vehicle Tracking</h1>
+        <p style="color:var(--muted);margin:0">Real-time GPS location and telemetry of our solar vehicle</p>
+      </div>
+
+      <div class="map-wrap" style="position:relative">
+        <div id="map" aria-hidden="false" title="Live vehicle map" style="width:100%;height:60vh;border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6);overflow:hidden;margin-bottom:28px"></div>
+        <div class="status-badge" id="statusBadge">
+          <span class="status-dot" id="statusDot"></span>
+          <div style="display:flex;flex-direction:column">
+            <small class="muted">Vehicle</small>
+            <strong id="vehicleState">Active • Driving</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;text-align:center">
+        <h2 style="font-size:2rem;margin-bottom:8px">Real-Time <span style="color:var(--accent-2)">Telemetry</span></h2>
+        <p style="color:var(--muted);margin-bottom:32px">Live vehicle data streamed directly from our solar vehicle's onboard systems</p>
+      </div>
+
+      <div class="telemetry" id="telemetry">
+        <div class="card" style="border-top:3px solid var(--accent)"><div style="font-size:1.8rem;margin-bottom:8px">🎯</div><div class="label">VEHICLE SPEED</div><div class="value" id="speed" style="color:var(--accent)">0 km/h</div></div>
+        <div class="card" style="border-top:3px solid var(--accent-2)"><div style="font-size:1.8rem;margin-bottom:8px">🔋</div><div class="label">BATTERY SOC</div><div class="value" id="soc" style="color:var(--accent-2)">-- %</div></div>
+        <div class="card" style="border-top:3px solid var(--accent)"><div style="font-size:1.8rem;margin-bottom:8px">☀️</div><div class="label">SOLAR INPUT</div><div class="value" id="solar" style="color:var(--accent)">-- W</div></div>
+        <div class="card" style="border-top:3px solid #fff"><div style="font-size:1.8rem;margin-bottom:8px">⚡</div><div class="label">BATTERY VOLTAGE</div><div class="value" id="voltage" style="color:#fff">-- V</div></div>
+        <div class="card" style="border-top:3px solid #fff"><div style="font-size:1.8rem;margin-bottom:8px">🌡️</div><div class="label">MOTOR TEMP</div><div class="value" id="temp" style="color:#fff">-- °C</div></div>
+        <div class="card" style="border-top:3px solid var(--accent-2)"><div style="font-size:1.8rem;margin-bottom:8px">🚀</div><div class="label">RANGE</div><div class="value" id="range" style="color:var(--accent-2)">-- km</div></div>
+        <div class="card" style="border-top:3px solid #fff"><div style="font-size:1.8rem;margin-bottom:8px">📈</div><div class="label">EFFICIENCY</div><div class="value" id="eff" style="color:#fff">-- Wh/km</div></div>
+        <div class="card" style="border-top:3px solid var(--accent)"><div style="font-size:1.8rem;margin-bottom:8px">⚙️</div><div class="label">DRIVE MODE</div><div class="value" id="mode" style="color:var(--accent)">Eco</div></div>
+      </div>
+
+      <div style="text-align:center;margin-top:28px;color:var(--muted);font-size:0.9rem">
+        <span style="color:#00ff00">●</span> Data updating in real-time • Last sync: Just now
+      </div>
+    </section>
+
+    <div id="siteFooter"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
