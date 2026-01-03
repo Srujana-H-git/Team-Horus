@@ -1,0 +1,134 @@
+/* ================= NAVBAR (MATCHING OLD STYLE) ================= */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b0b0b; /* flat dark */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px; /* compact like old */
+}
+
+/* Brand */
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link,
+.drop-btn {
+  color: #bfbfbf;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Hover effect (purple underline) */
+.nav-link:hover,
+.drop-btn:hover {
+  color: #7c3aed; /* purple */
+}
+
+.nav-link::after,
+.drop-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #7c3aed;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.drop-btn:hover::after {
+  width: 100%;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  min-width: 180px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  color: #bfbfbf;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: rgba(124, 58, 237, 0.12);
+  color: #7c3aed;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background: #0b0b0b;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    border: none;
+    background: transparent;
+    padding-left: 16px;
+  }
+}

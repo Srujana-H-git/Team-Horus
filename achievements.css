@@ -1,0 +1,188 @@
+:root {
+  --bg: #0b0f14;
+  --card: #11161d;
+  --border: #1c2430;
+  --text: #e6eaf0;
+  --muted: #9aa4b2;
+  --gold: #f5b301;
+  --blue: #33c5d8;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #121826, #070a0f);
+  color: var(--text);
+}
+
+/* NAVBAR */
+.site-nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 14, 20, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a.active {
+  color: var(--gold);
+  background: rgba(245,179,1,0.1);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+}
+
+.hero span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* STATS */
+.stats {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.stat h2 {
+  color: var(--gold);
+  font-size: 48px;
+}
+
+.stat p {
+  color: var(--muted);
+}
+
+/* TIMELINE */
+.timeline-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timeline-card {
+  background: linear-gradient(145deg, #0f141c, #0a0e14);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.timeline-card.latest {
+  border-color: var(--gold);
+}
+
+.year {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+}
+
+.event {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.badges span {
+  display: inline-block;
+  margin-top: 14px;
+  margin-right: 10px;
+  padding: 6px 14px;
+  background: #141b25;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* VEHICLES */
+.vehicles {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.vehicle-grid {
+  max-width: 1100px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.vehicle-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.vehicle-card.highlight {
+  border-color: var(--gold);
+}
+
+/* CLOSING */
+.closing {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.closing-card {
+  max-width: 700px;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
